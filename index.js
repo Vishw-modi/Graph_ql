@@ -43,6 +43,7 @@ const typeDefs = `#graphql
         posts: [Post!]!
         greetings(name: String!): String!
         add(a:Int!, b: Int!): Int!
+        trial(name: String!, age: Int): String! 
     }
 `;
 
@@ -57,6 +58,10 @@ const resolvers = {
 
     add: (parent, args) => {
       return args.a + args.b;
+    },
+
+    trial: (parent, args) => {
+      return `hello ${args.name} you are ${args.age} years old`;
     },
   },
 
